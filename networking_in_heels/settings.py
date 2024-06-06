@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o&=bdg=j=j46-m9j-cb$)j4!)&y=15k4f%6*oraqzke7u1t$nn'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
@@ -82,7 +82,7 @@ DATABASES = {
     }
 }
 database_url = os.environ.get("DATABASES_URL")
-DATABASES['default'] = dj_database_url.parse('postgres://networking_in_heels_user:UeCtaGIAWyoMSZRXpTqAxTnqcnpcXOfH@dpg-cpgse3uct0pc739v87kg-a.oregon-postgres.render.com/networking_in_heels')
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 
 # Password validation

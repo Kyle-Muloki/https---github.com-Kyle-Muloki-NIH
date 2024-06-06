@@ -1,9 +1,9 @@
-import logging
-
-logger = logging.getLogger(__name__)
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.conf import settings
+from .forms import TicketPurchaseForm  # Ensure this import statement is correct
 
 def purchase_ticket(request):
-    logger.debug("purchase_ticket view called")
     if request.method == 'POST':
         form = TicketPurchaseForm(request.POST)
         if form.is_valid():
@@ -13,27 +13,23 @@ def purchase_ticket(request):
             ticket_type = form.cleaned_data['ticket_type']
             quantity = form.cleaned_data['quantity']
 
-            try:
-                # Send email to customer
-                send_mail(
-                    'Thank you for your purchase',
-                    f'Thank you for purchasing {quantity} ticket(s) for the event.',
-                    settings.DEFAULT_FROM_EMAIL,
-                    [email],
-                    fail_silently=False,
-                )
+            # Send email to customer
+            send_mail(
+                'Thank you for your purchase',
+                f'Thank you for purchasing {quantity} ticket(s) for the event.',
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=False,
+            )
 
-                # Send email to client
-                send_mail(
-                    'New Ticket Purchase',
-                    f'Name: {name}\nPhone Number: {phone_number}\nE-mail: {email}',
-                    settings.DEFAULT_FROM_EMAIL,
-                    ['info@networkinginheels.co.ke'],
-                    fail_silently=False,
-                )
-            except Exception as e:
-                logger.error(f"Error sending email: {e}")
-                return render(request, 'tickets/purchase_ticket.html', {'form': form, 'error': str(e)})
+            # Send email to client
+            send_mail(
+                'New Ticket Purchase',
+                f'Name: {name}\nPhone Number: {phone_number}\nE-mail: {email}',
+                settings.DEFAULT_FROM_EMAIL,
+                ['info@networkinginheels.co.ke'],
+                fail_silently=False,
+            )
 
             return redirect('ticket_success')
     else:

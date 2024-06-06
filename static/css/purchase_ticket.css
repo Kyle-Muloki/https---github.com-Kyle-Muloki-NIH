@@ -1,0 +1,511 @@
+/* Existing CSS styles */
+
+.more_events {
+  display: flex;
+  align-items: center;
+  min-height: 65vh;
+  width: 100%;
+  background-image: radial-gradient( circle at top left,
+    rgba(101, 9, 156, 1)55%,
+    rgba(239, 62, 94, 0.8)
+  )
+}
+
+.more h1 {
+  font-family: Hind Vadodara;
+  margin-left: 500px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  color: rgba(45, 44, 60, 1);
+}
+
+.underline12 {
+  width: 100px;
+  height: 5px;
+  margin-left: 580px;
+  background-color: rgba(239, 62, 94, 1);
+  position: absolute;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.underline12 span {
+  position: absolute;
+}
+
+.more_info {
+  margin-left: 60px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.more_info h2 {
+  color: rgba(45, 44, 60, 1);
+  margin-left: 60px;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.more_info i {
+  padding-right: 10px;
+  margin-left: 60px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.calendarLink {
+  margin-left: 80px;
+  margin-bottom: 90px;
+}
+
+/* Styling for the calendar link */
+.calendarLink a {
+  color: #6200ea; /* Deep purple text */
+  font-size: 16px; /* Font size */
+  font-weight: 600; /* Bold text */
+  text-decoration: none; /* Underline */
+  transition: color 0.5s ease; /* Smooth transition for color */
+}
+
+/* Hover effect for the calendar link */
+.calendarLink a:hover {
+  color: #3700b3; /* Darker purple on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+.more_description {
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 40%;
+}
+
+.more_description h1 {
+  margin-left: 60px;
+  color: rgba(45, 44, 60, 1);
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.circle {
+  background-color: rgba(239, 62, 94, 1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: -90px;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.more_description p {
+  color: rgba(90, 90, 90, 1);
+  margin-left: 60px;
+  width: 90%;
+  margin-bottom: 100px;
+}
+
+.more_description h3 {
+  color: rgba(90, 90, 90, 1);
+  margin-left: 60px;
+  margin-bottom: 30px;
+}
+
+.more_description ul {
+  margin-left: 60px;
+  color: rgba(90, 90, 90, 1);
+  margin-bottom: 50px;
+}
+
+.more_description ul li {
+  margin-bottom: 10px;
+}
+
+.ticket {
+  margin-left: 900px;
+  margin-top: -130%;
+  margin-bottom: 100%;
+}
+
+.ticket h1 {
+  color: rgba(45, 44, 60, 1);
+  font-size: 32px;
+  margin-left: -30px;
+}
+
+.buy {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: 1px solid;
+  padding: 12px 18px;
+  border-radius: 12px 12px 12px 12px;
+  text-align: justify;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-bottom: 90px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: rgba(101, 9, 156, 1);
+}
+
+.buy:hover {
+  border: 1px solid rgb(175, 91, 248);
+  background: rgb(175, 91, 248);
+  transition: 0.5s;
+}
+
+.ticket i {
+  margin-left: -50px;
+  font-size: 30px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  padding-top: 60px;
+  animation: fadeIn 0.5s;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: none;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: slideIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideIn {
+  from {transform: translateY(-50px);}
+  to {transform: translateY(0);}
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input, form select {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus {
+  border-color: #5cb85c;
+  outline: none;
+}
+
+#totalCost {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background: rgba(101, 9, 156, 1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background:  rgb(175, 91, 248);
+  transform: scale(1.05);
+}
+
+.circle1 {
+  background-color: rgba(239, 62, 94, 1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: -50px;
+  margin-left: 10px;
+  margin-bottom: 40px;
+}
+
+.circle2 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-left: 100px;
+}
+
+.speakers {
+  margin-left: 60px;
+  margin-bottom: 350px;
+}
+
+.speakers h1 {
+  color: rgba(45, 44, 60, 1);
+  margin-left: 20px;
+}
+
+.speaker_name {
+  margin-top: 40px;
+  margin-left: 180px;
+  margin-bottom: 30px;
+  color: rgba(90, 90, 90, 1);
+}
+
+.speakers p {
+  margin-left: 600px;
+  margin-top: -400px;
+  width: 30%;
+  color: rgba(90, 90, 90, 1);
+}
+
+/* New CSS rules */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Hind Vadodara, Inter;
+  scroll-behavior: smooth;
+}
+
+.header {
+  background-color: white;
+  min-height: 20vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  padding: 2% 2%;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+nav img {
+  width: 150px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: rgba(51, 27, 59, 1);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: rgba(51, 27, 59, 1);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+  right: 0;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+nav .fa{
+  display: none;
+}
+footer{
+  width: 100%;
+  position: relative;
+  bottom: 0%;
+  background: linear-gradient(to right, rgba(172, 125, 185, 1),rgba(77, 56, 83, 1));
+  color: rgba(254, 254, 254, 1);
+  padding: 50px 0 30px;
+  border-top-left-radius: 100px;
+  font-size: 17px;
+  line-height: 20px;
+  margin-top: 50px;
+}
+
+.row-2{
+  width: 75%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.col-3{
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.logo-2{
+  width: 150px;
+  margin-bottom: 50px;
+}
+
+.col-4{
+  padding: 10px;
+}
+
+.col-4 h3{
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+footer ul li{
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+footer ul li a{
+  text-decoration: none;
+  color: rgba(254, 254, 254, 1);
+}
+
+.col-5{
+  padding: 10px;
+}
+
+.col-5 h4{
+  font-weight: bold;
+}
+
+.col-5 h3{
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.col-5 p{
+  margin-bottom: 9px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-info i {
+  margin-right: 10px; /* Adjust the spacing between icon and text */
+  vertical-align: middle;
+}
+
+.contact-info p{
+  font-weight: bold;
+}
+
+.col-6{
+  padding: 10px;
+}
+
+.col-6 h3{
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between; /* Add space between icons */
+}
+
+.icon-circle {
+  width: 30px; /* Set the width and height of the circle */
+  height: 30px;
+  border-radius: 50%; /* Make it a circle */
+  background-color: black; /* Black background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.icon {
+  font-size: 14px; /* Set the icon size */
+  color: white;
+  cursor: pointer;
+}
+
+.underline{
+  width: 100%;
+  height: 5px;
+  background: rgba(55, 71, 84, 1);
+  border-radius: 3px;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  overflow: hidden;
+}
+
+.underline span{
+  width: 15px;
+  height: 100%;
+  background: white;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+  0%{
+    left: -20px;
+  }
+  100%{
+    left: 100%;
+  }
+}
+.pay ul li{
+  color: rgba(90, 90, 90, 1);
+  text-decoration: none;
+  font-size: 20px;
+}

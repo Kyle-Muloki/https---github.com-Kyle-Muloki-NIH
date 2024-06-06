@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Networking in Heels - Purchase Ticket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.css">
+    <script src="https://kit.fontawesome.com/54665b0e47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/purchase_ticket.css' %}">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="https://www.networkinginheels.co.ke/index.html"><img src="{% static 'images/networking in heels logo 2.png' %}" alt="Networking in Heels Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="https://www.networkinginheels.co.ke/index.html">Home</a></li>
+                    <li><a href="https://www.networkinginheels.co.ke/About%20Us.html">About Us</a></li>
+                    <li><a href="https://www.networkinginheels.co.ke/Events%20page.html">Events</a></li>
+                    <li><a href="https://www.networkinginheels.co.ke/Partners.html">Partners</a></li>
+                    <li><a href="https://www.networkinginheels.co.ke/contact%20us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <section>
+        <section class="more_events"></section>
+        <div class="more">
+            <h1>THE WELLNESS EDITION</h1>
+            <div class="underline12"></div>
+        </div>
+        <div class="more_info">
+            <h2>Date and Time</h2>
+            <p><i class="fa-regular fa-calendar-days"></i> Thursday 4th July 2024</p>
+            <i class="fa-regular fa-clock"></i> 5:30pm - 8:30pm
+            <p class="calendarLink"><a id="calendarLink" href="#" target="_blank">+ Add to calendar</a></p>
+        </div>
+        <div class="more_description">
+            <h1>Event description</h1>
+            <div class="circle"></div>
+            <p>
+                The Wellness Edition is an immersive experience designed to rejuvenate mind, body, and soul. Step into a realm of holistic wellness where every element is curated to foster inner balance and vitality. From serene yoga sessions to invigorating mindfulness practices, indulge in a journey of self-discovery and renewal. Explore a variety of wellness workshops, from nutrition and fitness to meditation and stress management, led by experts in their fields. Dive into a tranquil oasis of relaxation, where soothing spa treatments and therapeutic massages await. Embrace a lifestyle of wellness and mindfulness, and emerge refreshed, revitalized, and ready to thrive. Join us for "The Wellness Edition" and embark on a transformative journey towards total well-being.
+                <h3>Here are three reasons why you cannot afford to miss it:</h3>
+                <ul>
+                    <li>Self-Care Imperative: In today's fast-paced world, prioritizing self-care is crucial for maintaining overall well-being. This event provides a unique opportunity to dedicate time solely to yourself, fostering a deeper connection with your mind, body, and spirit.</li>
+                    <li>Expert Guidance: Access to renowned experts in various wellness disciplines ensures that you receive top-tier guidance and advice tailored to your individual needs. Whether you're seeking to improve your fitness, nutrition, or mental health, you'll find invaluable insights to support your journey.</li>
+                    <li>Comprehensive Approach: "The Wellness Edition" offers a holistic approach to wellness, addressing all aspects of your health and happiness. From physical activities like yoga and fitness classes to mental well-being practices such as meditation and mindfulness, you'll find a comprehensive array of offerings to support your overall wellness goals.</li>
+                    <li>Networking Opportunities: Connect with like-minded individuals who share your commitment to living a balanced and fulfilling life. Engage in meaningful conversations, exchange ideas, and build a supportive community of wellness enthusiasts who can inspire and motivate you on your journey.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="speakers">
+            <h1>Speakers</h1>
+            <div class="circle1"></div>
+            <div class="circle2"><img src="{% static 'images/WhatsApp Image 2024-06-04 at 16.01 1.png' %}"></div>
+            <div class="speaker_name">
+                <h2>Fridah Kisinga</h2>
+                <h3>Clinical Dietitian</h3>
+            </div>
+            <p>Fridah Kisinga embodies dedication and innovation as a clinical dietitian based in Nairobi, Kenya, with seven years of enriching experience. Her journey in nutrition and dietetics, spanning both clinical and food safety realms, reflects a commitment to excellence. At Gertrude's Children Hospital, she not only ensures regulatory compliance and food quality but also spearheads patient-centered nutrition initiatives. Fridah's expertise extends beyond the hospital walls; she is a skilled content creator, leveraging her strong communication skills to educate and inspire. Fridah is poised to continue making significant strides in enhancing health and wellness through nutrition education and advocacy.
+            </p>
+        </div>
+        <div class="ticket">
+            <h1>Ticket Information</h1>
+            <p class="more_tickets">Early Bird: Kshs 3,000</p>
+            <p class="more_tickets">Advance: Kshs 3,500</p>
+            <p class="more_tickets">At Door: Kshs 4,000</p>
+            <div class="pay"><img src="{% static 'images/M-Pesa-01 1.png' %}">
+              <ul>
+                <li>PAY VIA MPESA USING:</li>
+                <li>PAYBILL:542542</li>
+                <li>ACCOUNT: 717739</li>
+              </ul>
+            </div>
+            
+            <a href="#" class="buy" id="buyTicket">Buy Ticket</a>
+
+        </div>
+    </section>
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Buy Ticket</h2>
+            <form method="post" action="{% url 'purchase_ticket' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="row-2">
+            <div class="col-3">
+                <img class="logo-2" src="{% static 'images/networking in heels logo 2.png' %}">
+                <p>Empowering and connecting women for personal and professional growth through meaningful connections</p>
+            </div>
+            <div class="col-4">
+                <h3>Links<div class="underline"><span></span></div></h3>
+                <ul>
+                  <li><a href="https://www.networkinginheels.co.ke/index.html">Home</a></li>
+                  <li><a href="https://www.networkinginheels.co.ke/About%20Us.html">About Us</a></li>
+                  <li><a href="https://www.networkinginheels.co.ke/Events%20page.html">Events</a></li>
+                  <li><a href="https://www.networkinginheels.co.ke/Partners.html">Partners</a></li>
+                  <li><a href="https://www.networkinginheels.co.ke/contact%20us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-5">
+                <h3>Contact Us<div class="underline"><span></span></div></h3>
+                <div class="contact-info">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <h4>+254721302640</h4>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <p class="email-id">info@networkinginheels.co.ke</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <h3>Socials<div class="underline"><span></span></div></h3>
+                <div class="social">
+                    <div class="icon-circle">
+                        <a href="https://www.facebook.com/NetworkingInHeels?_rdc=1&_rdr" target="_blank"><i class="fa-brands fa-facebook-f icon"></i></a>
+                    </div>
+                    <div class="icon-circle">
+                        <a href="https://www.linkedin.com/company/networking-in-heels-africa" target="_blank"><i class="fa-brands fa-linkedin icon"></i></a>
+                    </div>
+                    <div class="icon-circle">
+                        <a href="https://www.instagram.com/networkinginheels/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank"><i class="fa-brands fa-instagram icon"></i></a>
+                    </div>
+                    <div class="icon-circle">
+                        <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FNetworkInHeels" target="_blank"><i class="fa-brands fa-x-twitter icon"></i></a>
+                    </div>
+                    <div class="icon-circle">
+                        <a href="https://www.tiktok.com/search?q=networking%20in%20heels&t=1714848900772" target="_blank"><i class="fa-brands fa-tiktok icon"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu(){
+        navLinks.style.right = "0"
+
+      }
+      function hideMenu(){
+        navLinks.style.right = "-200px"
+        
+      }
+    </script>
+    <script>
+        function updateCalendarLink() {
+            try {
+                const eventTitle = "THE WELLNESS EDITION";
+                const eventLocation = "WestWood Hotel, Eldama Ravine Road, Westlands";
+                const eventDetails = "Join us for the Wellness Edition";
+
+                const eventDateText = document.querySelector('.more_info').innerText.trim().split("\n")[1].trim();
+                const eventTimeText = document.querySelector('.more_info + div').innerText.trim();
+
+                console.log("Event Date Text:", eventDateText);
+                console.log("Event Time Text:", eventTimeText);
+
+                const [eventStartTime, eventEndTime] = eventTimeText.split(' - ').map(time => time.trim());
+                const [dayName, day, monthName, year] = eventDateText.split(' ');
+
+                const monthMap = {
+                    'January': '01', 'February': '02', 'March': '03', 'April': '04',
+                    'May': '05', 'June': '06', 'July': '07', 'August': '08',
+                    'September': '09', 'October': '10', 'November': '11', 'December': '12'
+                };
+                const eventMonth = monthMap[monthName];
+                const eventDate = `${year}-${eventMonth}-${day.padStart(2, '0')}`;
+
+                console.log("Parsed Event Date:", eventDate);
+
+                const formatDateTime = (date, time) => {
+                    const [hours, minutes] = time.split(/[:\s]/);
+                    const ampm = time.slice(-2);
+                    let formattedHours = (ampm === "pm" && hours !== "12") ? parseInt(hours, 10) + 12 : hours;
+                    formattedHours = (ampm === "am" && hours === "12") ? "00" : formattedHours;
+                    return `${date}T${formattedHours}:${minutes}:00Z`;
+                };
+
+                const startDateTime = formatDateTime(eventDate, eventStartTime);
+                const endDateTime = formatDateTime(eventDate, eventEndTime);
+
+                console.log("Start DateTime:", startDateTime);
+                console.log("End DateTime:", endDateTime);
+
+                const calendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDateTime}/${endDateTime}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
+
+                console.log("Generated Calendar Link:", calendarLink);
+
+                const calendarLinkElement = document.getElementById('calendarLink');
+                calendarLinkElement.href = calendarLink;
+                calendarLinkElement.innerText = "Add to calendar";
+            } catch (error) {
+                console.error("Error updating calendar link:", error);
+            }
+        }
+
+        window.onload = updateCalendarLink;
+    </script>
+    <script>
+        function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+        }
+
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+        }
+    </script>
+    <script>
+        var modal = document.getElementById("ticketModal");
+        var btn = document.getElementById("buyTicket");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById('ticketType').addEventListener('change', calculateTotal);
+        document.getElementById('quantity').addEventListener('change', calculateTotal);
+
+        function calculateTotal() {
+            var ticketType = document.getElementById('ticketType').value;
+            var quantity = document.getElementById('quantity').value;
+            var total = ticketType * quantity;
+            document.getElementById('totalCost').innerText = "Total Cost: Kshs " + total;
+        }
+    </script>
+</body>
+</html>

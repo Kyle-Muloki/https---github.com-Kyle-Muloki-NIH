@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o&=bdg=j=j46-m9j-cb$)j4!)&y=15k4f%6*oraqzke7u1t$nn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['networkinginheels.co.ke', 'www.networkinginheels.co.ke']
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(" ")
 
 
 # Application definition
@@ -80,6 +81,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+database_url = os.environ.get("DATABASES_URL")
+DATABASES['default'] = dj_database_url.parse('postgres://networking_in_heels_user:UeCtaGIAWyoMSZRXpTqAxTnqcnpcXOfH@dpg-cpgse3uct0pc739v87kg-a.oregon-postgres.render.com/networking_in_heels')
 
 
 # Password validation

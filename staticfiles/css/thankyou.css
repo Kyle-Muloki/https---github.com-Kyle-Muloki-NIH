@@ -1,0 +1,74 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hind Vadodara', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to right, #f4f4f9, #e0eafc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+a.button {
+  display: inline-block;
+  padding: 15px 30px;
+  color: #fff;
+  background: #6200ea;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 1em;
+}
+
+a.button:hover {
+  background: #3700b3;
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 60px;
+  color: #6200ea;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -17,14 +17,16 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from tickets import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tickets/', include('tickets.urls')),
-    path('', views.purchase_ticket, name='home'),  # Home view for simplicity
+    path('tickets/', include('tickets.urls')),  # Include the tickets app URLs
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 

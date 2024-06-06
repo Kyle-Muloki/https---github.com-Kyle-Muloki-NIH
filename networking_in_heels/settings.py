@@ -82,7 +82,7 @@ DATABASES = {
     }
 }
 database_url = os.environ.get("DATABASES_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+DATABASES['default'] = dj_database_url.parse('postgres://networking_in_heels_user:UeCtaGIAWyoMSZRXpTqAxTnqcnpcXOfH@dpg-cpgse3uct0pc739v87kg-a.oregon-postgres.render.com/networking_in_heels')
 
 
 # Password validation

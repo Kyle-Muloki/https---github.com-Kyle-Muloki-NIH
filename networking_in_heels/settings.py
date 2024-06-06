@@ -81,8 +81,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-database_url = os.environ.get("DATABASES_URL")
-DATABASES['default'] = dj_database_url.parse('postgres://networking_in_heels_user:UeCtaGIAWyoMSZRXpTqAxTnqcnpcXOfH@dpg-cpgse3uct0pc739v87kg-a.oregon-postgres.render.com/networking_in_heels')
+DATABASES_URL = os.environ.get('DATABASE_URL')
+if DATABASES_URL:
+    DATABASES['default'] = dj_database_url.parse(DATABASES_URL)
 
 
 # Password validation

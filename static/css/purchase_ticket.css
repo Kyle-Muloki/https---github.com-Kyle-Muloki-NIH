@@ -509,3 +509,165 @@ footer ul li a{
   text-decoration: none;
   font-size: 20px;
 }
+@media(max-width: 700px) {
+  footer {
+    bottom: unset;
+  }
+  .row-2 {
+    max-width: 100%; /* Adjust the max-width for smaller screens */
+    padding: 0 15px; /* Add padding to the sides for spacing */
+  }
+  .col-3{
+    max-width: 100%;
+  }
+  .col-4 {
+    width: 100%;
+  }
+  .header{
+    overflow-x: hidden;
+    min-height: 75hv;
+  }
+  
+  .home .content h3{
+    font-size: 20px;
+  }
+  .home .content p{
+    font-size: 18px;
+  }
+  
+  .nav-links ul li{
+    display: block;
+    overflow: hidden;
+  }
+  .nav-links{
+    position: fixed;
+    background-color: whitesmoke;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 0;
+    transition: 0.5s;
+    overflow-x: hidden;
+
+  }
+
+  nav .fa{
+    display: block;
+    color: black;
+    margin: 18px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .nav-links ul{
+    padding: 10px;
+  }
+  .more h1 {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .underline12 {
+    margin-left: 20px;
+  }
+
+  .more_info {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .more_info h2 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .more_info i {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .calendarLink {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .more_description {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .more_description h1 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .circle {
+    margin-top: -50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .more_description p,
+  .more_description h3,
+  .more_description ul,
+  .more_description ul li {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ticket {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .buy {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ticket i {
+    margin-left: -30px;
+  }
+
+  .modal-content {
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .speakers {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .speakers h1 {
+    margin-left: 20px;
+  }
+
+  .speaker_name {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .speakers p {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  /* Adjust image sizes */
+  .circle2 img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+}

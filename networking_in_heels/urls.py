@@ -25,8 +25,7 @@ urlpatterns = [
     path('tickets/', include('tickets.urls')),  # Include the tickets app URLs
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 
 
 
